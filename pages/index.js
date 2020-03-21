@@ -64,6 +64,16 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort}) => {
                 .right {
                     flex: 1;
                 }
+                @media (max-width: 820px) {
+                    .stats {
+                        flex-direction: column;
+                    }
+                    .left > * {
+                        margin-right: 0;
+                    }
+                }
+                
+
                 `}</style>
 
         </div>

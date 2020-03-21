@@ -101,6 +101,12 @@ const Rank = ({data}) => {
                     color: red;
                     font-weight:500;                
                 }
+                @media (max-width: 820px) {
+                    .stats .num {
+                        margin-left: 5px;
+                    }
+                    
+                }
             `}</style>
         </Card>
 
