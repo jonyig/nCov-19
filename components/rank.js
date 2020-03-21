@@ -88,7 +88,7 @@ const Rank = ({data}) => {
                     display: flex;
                     margin-left: auto;
                     text-align: right;
-                    margin-right: 5px;
+                    margin-right: 1px;
                 }
                 .stats .num {
                     width: 60px;
