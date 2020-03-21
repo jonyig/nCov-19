@@ -16,28 +16,30 @@ const Rank = ({data}) => {
                 </div>
                 <div className="content">
                     {
-                        data.slice(0, 10).map((item, index) =>
-                            <div className="country">
-                                <div>{index + 1}. {item.country}</div>
-                                <div className="stats">
-                                    <div className="num">
-                                        <span>{item.cases}</span>
-                                        <div className="daily">
-                                            <div className="today">+{item.todayCases}</div>
+                        data.slice(0, 10).map((item, index) => {
+                            return (
+                                <div className="country">
+                                    <div>{index + 1}. {item.country}</div>
+                                    <div className="stats">
+                                        <div className="num">
+                                            <span>{item.cases}</span>
+                                            <div className="daily">
+                                                <div className="today">+{item.todayCases}</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="num">
-                                        <span>{item.deaths}</span>
-                                        <div className="daily">
-                                            <div className="today">+{item.todayDeaths}</div>
+                                        <div className="num">
+                                            <span>{item.deaths}</span>
+                                            <div className="daily">
+                                                <div className="today">+{item.todayDeaths}</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="num">
-                                        <span>{item.recovered}</span>
+                                        <div className="num">
+                                            <span>{item.recovered}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        )
+                            )
+                        })
                     }
                 </div>
             </div>
