@@ -21,9 +21,9 @@
     "next": "^9.3.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "swr": "^0.1.18"
+    "swr": "^0.1.18",
+    "dotenv-webpack": "^1.7.0"
   },
   "devDependencies": {
-    "dotenv-webpack": "^1.7.0"
   }
 }
