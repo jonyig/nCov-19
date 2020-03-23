@@ -5,11 +5,8 @@ import Country from "../components/country";
 import Rank from "../components/rank";
 require('now-env');
 
-const Index = ({dataAll, dataTaiwan, dataChina, dataSort}) => {
-    // console.log(dataAll);
-    // console.log(dataTaiwan);
-    // console.log(dataChina);
-    const test = process.env.NEWS_API_KEY;
+const Index = ({dataAll, dataTaiwan, dataChina, dataSort,dataNews}) => {
+    console.log(dataNews);
     return (
         <div className="app">
             <div className="container">
@@ -93,6 +90,9 @@ Index.getInitialProps = async function () {
     const sort = await fetch("https://corona.lmao.ninja/countries?sort=cases");
     const dataSort = await sort.json();
 
-    return {dataAll, dataTaiwan, dataChina, dataSort};
+    const NEWS_API_KEY = process.env.NEWS_API_KEY;
+    const news = await fetch(`http://newsapi.org/v2/top-headlines?q=%E7%96%AB%E6%83%85&country=tw&apiKey=${NEWS_API_KEY}`);
+    const dataNews = await news.json();
+    return {dataAll, dataTaiwan, dataChina, dataSort,dataNews};
 };
 export default Index;
