@@ -15,17 +15,14 @@
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
+    "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "isomorphic-unfetch": "^3.0.0",
     "moment": "^2.24.0",
     "next": "^9.3.1",
+    "now-env": "^3.0.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "swr": "^0.1.18",
-    "now-env": "^3.0.1"
-
-  },
-  "devDependencies": {
-    "dotenv-webpack": "^1.7.0"
+    "swr": "^0.1.18"
   }
 }

@@ -3,7 +3,6 @@ import React from "react";
 import World from "../components/world";
 import Country from "../components/country";
 import Rank from "../components/rank";
-import worldCase from "../api/worldCase"
 require('now-env');
 
 const Index = ({dataAll, dataTaiwan, dataChina, dataSort}) => {
