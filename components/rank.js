@@ -18,7 +18,7 @@ const Rank = ({data}) => {
                     {
                         data.slice(0, 10).map((item, index) => {
                             return (
-                                <div className="country">
+                                <div className="country" key={item.country} >
                                     <div>{index + 1}. {item.country}</div>
                                     <div className="stats">
                                         <div className="num">

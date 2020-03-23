@@ -9,7 +9,7 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort}) => {
     // console.log(dataAll);
     // console.log(dataTaiwan);
     // console.log(dataChina);
-
+console.log(process.env.TEST_NAME);
 
     return (
         <div className="app">
