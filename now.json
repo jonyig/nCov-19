@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "env": {
+    "TEST_NAME": "@test-name"
+  },
   "build": {
     "env": {
       "TEST_NAME": "@test-name"
