@@ -3,14 +3,14 @@ import React from "react";
 import World from "../components/world";
 import Country from "../components/country";
 import Rank from "../components/rank";
-
+import worldCase from "../api/worldCase"
+require('now-env');
 
 const Index = ({dataAll, dataTaiwan, dataChina, dataSort}) => {
     // console.log(dataAll);
     // console.log(dataTaiwan);
     // console.log(dataChina);
-console.log(process.env.TEST_NAME);
-
+    const test = process.env.NEWS_API_KEY;
     return (
         <div className="app">
             <div className="container">
@@ -85,15 +85,14 @@ Index.getInitialProps = async function () {
     const all = await fetch("https://corona.lmao.ninja/all/");
     const dataAll = await all.json();
 
-    const taiwan = await fetch("https://corona.lmao.ninja/countries/taiwan");
-    const dataTaiwan = await taiwan.json();
+    const country = await fetch("https://corona.lmao.ninja/countries");
+    const dataCountry = await country.json();
 
-    const china = await fetch("https://corona.lmao.ninja/countries/china");
-    const dataChina = await china.json();
+    const dataTaiwan = dataCountry.find(c => c.country === "Taiwan");
+    const dataChina = dataCountry.find(c => c.country === "China");
 
     const sort = await fetch("https://corona.lmao.ninja/countries?sort=cases");
     const dataSort = await sort.json();
-
 
     return {dataAll, dataTaiwan, dataChina, dataSort};
 };
