@@ -9,38 +9,61 @@ require('now-env');
 
 const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
     return (
-        <div className="app">
-            <div className="container">
-                <h1 className="header">NCOV-19</h1>
-                <div className="stats">
-                    <div className="left">
-                        <div>
-                            <World data={dataAll}/>
+        <>
+            <head>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <title>Covid-19 新冠肺炎</title>
+                <meta name="title" content="Covid-19 新冠肺炎" />
+
+                <meta
+                    name="description"
+                    content="Coronavirus - 新冠肺炎相關訊息，包含了台灣、世界確診數據以及相關新聞"
+                />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://covid19tw.tk/" />
+                <meta property="og:title" content="Covid-19 新冠肺炎快訊" />
+                <meta
+                    property="og:description"
+                    content="Coronavirus - 新冠肺炎相關訊息，包含了台灣、世界確診數據以及相關新聞|武漢肺炎"
+                />
+                <meta
+                    property="og:image"
+                    content="https://jonny-test.s3-ap-northeast-1.amazonaws.com/w1240-p16x9-php1LTNyP.jpg"
+                />
+            </head>
+            <div className="app">
+                <div className="container">
+                    <h1 className="header">NCOV-19</h1>
+                    <div className="stats">
+                        <div className="left">
+                            <div>
+                                <World data={dataAll}/>
+                            </div>
+                            <div>
+                                <Country data={dataTaiwan}/>
+                            </div>
+                            <div>
+                                <Country data={dataChina}/>
+                            </div>
                         </div>
-                        <div>
-                            <Country data={dataTaiwan}/>
+                        <div className="right">
+                            <Rank data={dataSort}/>
                         </div>
-                        <div>
-                            <Country data={dataChina}/>
-                        </div>
-                    </div>
-                    <div className="right">
-                        <Rank data={dataSort}/>
-                    </div>
 
 
+                    </div>
+                    <div className="bottom">
+                        <News data={dataNews}/>
+                    </div>
                 </div>
-                <div className="bottom">
-                    <News data={dataNews}/>
-                </div>
-            </div>
-            <style jsx global>{`
+                <style jsx global>{`
                 body{
                     background: #fcfcfc;
 
                 }
                 `}</style>
-            <style jsx>{`
+                <style jsx>{`
                 .app{
                     max-width: 1000px;
                     margin:auto;
@@ -77,7 +100,8 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
 
                 `}</style>
 
-        </div>
+            </div>
+        </>
     );
 };
 
