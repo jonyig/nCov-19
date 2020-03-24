@@ -4,7 +4,7 @@ import World from "../components/world";
 import Country from "../components/country";
 import Rank from "../components/rank";
 import News from "../components/news";
-import Head from "next/dist/next-server/lib/head";
+import Head from "next/head";
 
 require('now-env');
 
