@@ -3,10 +3,11 @@ import React from "react";
 import World from "../components/world";
 import Country from "../components/country";
 import Rank from "../components/rank";
+import News from "../components/news";
+
 require('now-env');
 
-const Index = ({dataAll, dataTaiwan, dataChina, dataSort,dataNews}) => {
-    console.log(dataNews);
+const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
     return (
         <div className="app">
             <div className="container">
@@ -27,6 +28,10 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort,dataNews}) => {
                         <Rank data={dataSort}/>
                     </div>
 
+
+                </div>
+                <div className="bottom">
+                    <News data={dataNews}/>
                 </div>
             </div>
             <style jsx global>{`
@@ -93,6 +98,7 @@ Index.getInitialProps = async function () {
     const NEWS_API_KEY = process.env.NEWS_API_KEY;
     const news = await fetch(`http://newsapi.org/v2/top-headlines?q=%E7%96%AB%E6%83%85&country=tw&apiKey=${NEWS_API_KEY}`);
     const dataNews = await news.json();
-    return {dataAll, dataTaiwan, dataChina, dataSort,dataNews};
+
+    return {dataAll, dataTaiwan, dataChina, dataSort, dataNews};
 };
 export default Index;
