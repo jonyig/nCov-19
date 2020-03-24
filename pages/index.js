@@ -4,13 +4,14 @@ import World from "../components/world";
 import Country from "../components/country";
 import Rank from "../components/rank";
 import News from "../components/news";
+import Head from "next/dist/next-server/lib/head";
 
 require('now-env');
 
 const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
     return (
         <>
-            <head>
+            <Head>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <title>Covid-19 新冠肺炎</title>
                 <meta name="title" content="Covid-19 新冠肺炎" />
@@ -31,7 +32,7 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
                     property="og:image"
                     content="https://jonny-test.s3-ap-northeast-1.amazonaws.com/w1240-p16x9-php1LTNyP.jpg"
                 />
-            </head>
+            </Head>
             <div className="app">
                 <div className="container">
                     <h1 className="header">NCOV-19</h1>
