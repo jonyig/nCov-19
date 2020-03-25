@@ -15,6 +15,7 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <title>Covid-19 新冠肺炎</title>
                 <meta name="title" content="Covid-19 新冠肺炎" />
+                <link rel="shortcut icon" href="https://jonny-test.s3-ap-northeast-1.amazonaws.com/favicon-2020032502481465.ico" />
 
                 <meta
                     name="description"
