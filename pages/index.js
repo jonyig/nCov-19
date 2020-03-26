@@ -9,9 +9,13 @@ import Head from "next/head";
 require('now-env');
 
 const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
+
+    const GA_KEY = process.env.GA_KEY;
+
     return (
         <>
             <Head>
+
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <title>Covid-19 新冠肺炎</title>
                 <meta name="title" content="Covid-19 新冠肺炎" />
@@ -33,8 +37,25 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
                     property="og:image"
                     content="https://jonny-test.s3-ap-northeast-1.amazonaws.com/w1240-p16x9-php1LTNyP.jpg"
                 />
+
+                {GA_KEY && (
+                    <>
+                        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_KEY}`}/>
+
+                            <script dangerouslySetInnerHTML={{
+                                __html: `window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', '${GA_KEY}');`,
+                            }}>
+                        </script>
+                    </>
+                ) }
             </Head>
             <div className="app">
+
+
                 <div className="container">
                     <h1 className="header">NCOV-19</h1>
                     <div className="stats">
@@ -106,7 +127,6 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
         </>
     );
 };
-
 
 Index.getInitialProps = async function () {
     const all = await fetch("https://corona.lmao.ninja/all/");

@@ -2,6 +2,7 @@
   "version": 2,
   "env": {
     "TEST_NAME": "@test-name",
-    "NEWS_API_KEY": "@news-api-key"
+    "NEWS_API_KEY": "@news-api-key",
+    "GA_KEY": "@ga-key"
   }
 }

@@ -16,6 +16,7 @@
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
     "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
     "dotenv": "^8.2.0",
     "isomorphic-unfetch": "^3.0.0",
     "moment": "^2.24.0",
@@ -23,6 +24,7 @@
     "now-env": "^3.0.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-gtm-module": "^2.0.8",
     "swr": "^0.1.18"
   }
 }
