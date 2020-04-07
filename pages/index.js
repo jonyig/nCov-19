@@ -79,6 +79,12 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
                     <div className="bottom">
                         <News data={dataNews}/>
                     </div>
+                    <div className="footer">
+                            © 2020 Powered by
+                        <img src="https://jonny-test.s3-ap-northeast-1.amazonaws.com/favicon-2020032502481465.ico" alt=""/>
+                        &nbsp;
+                        <a href="https://blog.jonnykuo.now.sh/">Jonny</a>
+                    </div>
                 </div>
                 <style jsx global>{`
                 body{
@@ -119,6 +125,12 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
                         margin-right: 0;
                     }
                 }
+                .footer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    padding: 20px 10px;
+                }  
                 
 
                 `}</style>
