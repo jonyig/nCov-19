@@ -16,19 +16,20 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
         <>
             <Head>
 
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                 <title>Covid-19 新冠肺炎</title>
-                <meta name="title" content="Covid-19 新冠肺炎" />
-                <link rel="shortcut icon" href="https://jonny-test.s3-ap-northeast-1.amazonaws.com/favicon-2020032502481465.ico" />
+                <meta name="title" content="Covid-19 新冠肺炎"/>
+                <link rel="shortcut icon"
+                      href="https://jonny-test.s3-ap-northeast-1.amazonaws.com/favicon-2020032502481465.ico"/>
 
                 <meta
                     name="description"
                     content="Coronavirus - 新冠肺炎相關訊息，包含了台灣、世界確診數據以及相關新聞"
                 />
 
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://covid19tw.tk/" />
-                <meta property="og:title" content="Covid-19 新冠肺炎快訊" />
+                <meta property="og:type" content="website"/>
+                <meta property="og:url" content="https://covid19tw.tk/"/>
+                <meta property="og:title" content="Covid-19 新冠肺炎快訊"/>
                 <meta
                     property="og:description"
                     content="Coronavirus - 新冠肺炎相關訊息，包含了台灣、世界確診數據以及相關新聞|武漢肺炎"
@@ -42,16 +43,16 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
                     <>
                         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_KEY}`}/>
 
-                            <script dangerouslySetInnerHTML={{
-                                __html: `window.dataLayer = window.dataLayer || [];
+                        <script dangerouslySetInnerHTML={{
+                            __html: `window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
 
                     gtag('config', '${GA_KEY}');`,
-                            }}>
+                        }}>
                         </script>
                     </>
-                ) }
+                )}
             </Head>
             <div className="app">
 
@@ -80,8 +81,9 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
                         <News data={dataNews}/>
                     </div>
                     <div className="footer">
-                            © 2020 Powered by
-                        <img src="https://jonny-test.s3-ap-northeast-1.amazonaws.com/favicon-2020032502481465.ico" alt=""/>
+                        © 2020 Powered by
+                        <img src="https://jonny-test.s3-ap-northeast-1.amazonaws.com/favicon-2020032502481465.ico"
+                             alt=""/>
                         &nbsp;
                         <a href="https://blog.jonnykuo.now.sh/"><b>Jonny</b></a>
                     </div>
@@ -145,16 +147,17 @@ const Index = ({dataAll, dataTaiwan, dataChina, dataSort, dataNews}) => {
 };
 
 Index.getInitialProps = async function () {
-    const all = await fetch("https://corona.lmao.ninja/all/");
+    const all = await fetch("https://corona.lmao.ninja/v2/all/");
     const dataAll = await all.json();
 
-    const country = await fetch("https://corona.lmao.ninja/countries");
+    const country = await fetch("https://corona.lmao.ninja/v2/countries");
     const dataCountry = await country.json();
+
 
     const dataTaiwan = dataCountry.find(c => c.country === "Taiwan");
     const dataChina = dataCountry.find(c => c.country === "China");
 
-    const sort = await fetch("https://corona.lmao.ninja/countries?sort=cases");
+    const sort = await fetch("https://corona.lmao.ninja/v2/countries?sort=cases");
     const dataSort = await sort.json();
 
     const NEWS_API_KEY = process.env.NEWS_API_KEY;
