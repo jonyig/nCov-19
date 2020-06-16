@@ -157,8 +157,8 @@ Index.getInitialProps = async function () {
     const dataTaiwan = dataCountry.find(c => c.country === "Taiwan");
     const dataChina = dataCountry.find(c => c.country === "China");
 
-    const sort = await fetch("https://corona.lmao.ninja/v2/countries?sort=cases");
-    const dataSort = await sort.json();
+    // const sort = await fetch("https://corona.lmao.ninja/v2/countries?sort=cases"); 待解事項
+    const dataSort = [];
 
     const NEWS_API_KEY = process.env.NEWS_API_KEY;
     const news = await fetch(`http://newsapi.org/v2/top-headlines?q=%E7%96%AB%E6%83%85&country=tw&apiKey=${NEWS_API_KEY}`);
